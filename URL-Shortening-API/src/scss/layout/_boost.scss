@@ -1,0 +1,33 @@
+@use './../main/variables.scss' as *;
+@use './../main/mixins.scss' as *;
+
+
+.boost-section {
+    background-color: $dark-violet;
+    background-image: url('../../images/bg-boost-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .boost {
+        padding: 7rem 0rem;
+        h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            @include tablet {
+                font-size: 3rem;
+                font-weight: 700;
+            }
+        }
+        button {
+            background-color: $cyan;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 3rem;
+        }
+    }
+    @include tablet {
+        background-image: url('../../images/bg-boost-desktop.svg');
+    }
+}

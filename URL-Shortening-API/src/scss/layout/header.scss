@@ -1,0 +1,83 @@
+@use '../main/mixins.scss' as *;
+@use '../main/variables.scss' as *;
+
+.header {
+    margin-top: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .logo {
+        cursor: pointer;
+    }
+    .nav-header {
+        .hamburger {
+            width: 3.7rem;
+            cursor: pointer;
+            @include tablet {
+                display: none;
+            }
+        }
+        .navigation-list {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            z-index: 1;
+            li {
+                a {
+                    text-decoration: none;
+                    color: $grayish-violet;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    transition: color 200ms ease;
+                    @include tablet {
+                        &:hover {
+                            color: $very-dark-blue;
+                        }
+                    }
+                    @include mobile {
+                        color: #fff;
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+            @include mobile {
+                position: absolute;
+                left: 0;
+                background-color: $dark-violet;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                border-radius: 1rem;
+                gap: 4rem;
+                height: 0rem;
+                overflow: hidden;
+                transition: height 1s ease;
+            }
+        }
+        @include tablet {
+            position: absolute;
+            left: 150px;
+        }
+    }
+    .buttons-navigation-desktop {
+        button {
+            font-size: 1.7rem;
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: bold;
+        }
+        .login {
+            background-color: #fff;
+            color: $grayish-violet;
+        }
+        .signUp {
+            background: $cyan;
+            color: #fff;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+}

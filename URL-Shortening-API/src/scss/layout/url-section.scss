@@ -1,0 +1,68 @@
+@use './../main/variables.scss' as *;
+@use './../main/mixins.scss' as *;
+
+.url-section {
+    background-color: $dark-violet;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    background-image: url('../../images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 7rem auto;
+        .input-text {
+            height: 2.5rem;
+            border-radius: .7rem;
+            border: none;
+            margin-bottom: 1.5rem;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            &:focus {
+                outline: 2px solid red;
+            }
+            @include tablet {
+                font-size: 1.9rem;
+                height: 7rem;
+                margin: 0rem;
+            }
+        }
+        .input-submit {
+            width: 100%;
+            background-color: $cyan;
+            color: #fff;
+            font-size: 1.9rem;
+            padding: 1rem;
+            border-radius: .7rem;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 200ms ease;
+            @include tablet {
+                width: 20rem;
+                height: 7rem;
+                padding: 1rem 2rem;
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+        .alert-url {
+            position: absolute;
+            bottom: -40px;
+            color: red;
+            font-size: 1.5rem;
+            left: 10px;
+            font-style: italic;
+            opacity: 0;
+        }
+        @include tablet {
+            display: flex;
+            padding: 4rem;
+            justify-content: space-between;
+            gap: 2rem;
+            background-image: url('../../images/bg-shorten-desktop.svg');
+            background-position: center;
+            background-size: cover;
+        }
+}

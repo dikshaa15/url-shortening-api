@@ -1,0 +1,73 @@
+@use './.././main/variables.scss' as *;
+@use './.././main/mixins.scss' as *;
+
+.footer-section {
+    background-color: $very-dark-violet;
+    .footer {
+        padding: 5rem 0rem;
+        background-color: $very-dark-violet;
+        .logo {
+            img {
+                cursor: pointer;
+            }
+        }
+        .footer-nav {
+            .info {
+                h3 {
+                    color: #fff;
+                    font-size: 1.4rem;
+                    @include tablet {
+                        font-size: 1.8rem;
+                    }
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        list-style: none;
+                        color: $gray;
+                        font-size: 1.2rem;
+                        line-height: 2.7rem;
+                        display: inline-block;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        transition: color 200ms ease;
+                        @include tablet {
+                            font-size: 1.4rem;
+                            &:hover {
+                                color: $cyan;
+                            }
+                        }
+                    }
+                }
+            }
+            @include tablet {
+                display: flex;
+                gap: 7rem;
+            }
+        }
+        .logos {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            img {
+                cursor: pointer;
+                @include tablet {
+                    margin-right: 2rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+            @include tablet {
+                margin: 0rem;
+                display: block;
+            }
+        }
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
